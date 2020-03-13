@@ -17,12 +17,12 @@ public class CardTester {
 		Card card2 = new Card("ace", "spades", 1);
 		Card card3 = new Card("AcE", "HeArts", 1);
 
-		System.out.println(card3.toString());
+		/*System.out.println(card3.toString());
 		System.out.println(card3.suit());
 		System.out.println(card3.rank());
 		System.out.println(card3.pointValue());
 
-		System.out.println(card1.matches(card2));
+		System.out.println(card1.matches(card2));*/
 
 
 		ArrayList<String> ranks = new ArrayList<String>(Arrays.asList("Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"));
@@ -31,8 +31,13 @@ public class CardTester {
 
 		Deck deck = new Deck(ranks, suits, values);
 
-		System.out.println(deck.isEmpty());
+		// System.out.println(deck.isEmpty());
+
+		System.out.println(deck.size());
 		System.out.println(deck.deal().toString());
+		System.out.println(deck.size());
+
+		System.out.println(deck.toString());
 
 	}
 }

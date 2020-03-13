@@ -11,7 +11,7 @@ public class Deck {
     // Copy toString method from starter code
     public Deck(/* set these to an Array !!! NVM !!!*/ ArrayList<String> ranks, ArrayList<String> suits, ArrayList<Integer> values)
     {
-        this.cards = new ArrayList<Card>();
+        this.cards = new ArrayList<Card>(ranks.size() * suits.size());
         //this.cards.size() = ranks.size()-1 * suits.size()-1;
         for (int suit = 0; suit < suits.size(); suit++)
             {
@@ -23,6 +23,7 @@ public class Deck {
         }
 
         this.size = cards.size();
+        System.out.println(this.size);
         // shuffle the deck (ACTIVITY 4)
     }
 
@@ -46,10 +47,46 @@ public class Deck {
         }
         // is this correct?
 
-        this.size--;
         Card dealt = this.cards.get(this.size-1);
+        this.size--;
 
         return dealt;
+    }
+
+    public int size()
+    {
+        return this.size;
+    }
+
+    @Override
+    public String toString() {
+        String rtn = "size = " + size + "\nUndealt cards: \n";
+
+        for (int k = size - 1; k >= 0; k--) {
+            rtn = rtn + cards.get(k);
+            if (k != 0) {
+                rtn = rtn + ", ";
+            }
+            if ((size - k) % 2 == 0) {
+                // Insert carriage returns so entire deck is visible on console.
+                rtn = rtn + "\n";
+            }
+        }
+
+        rtn = rtn + "\nDealt cards: \n";
+        for (int k = cards.size() - 1; k >= size; k--) {
+            rtn = rtn + cards.get(k);
+            if (k != size) {
+                rtn = rtn + ", ";
+            }
+            if ((k - cards.size()) % 2 == 0) {
+                // Insert carriage returns so entire deck is visible on console.
+                rtn = rtn + "\n";
+            }
+        }
+
+        rtn = rtn + "\n";
+        return rtn;
     }
 
 }

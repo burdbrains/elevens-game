@@ -97,7 +97,7 @@ public class Card {
 	@Override
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		String str = this.rank + " of " + this.suit + "(point value = " + this.pointValue + ")";
+		String str = this.rank + " of " + this.suit + " (point value = " + this.pointValue + ")";
 		return str;
 	}
 }
