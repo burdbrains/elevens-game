@@ -30,6 +30,7 @@ public class CardTester {
 		ArrayList<Integer> values = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13));
 
 		Deck deck = new Deck(ranks, suits, values);
+		System.out.println(deck.toString());
 
 		// System.out.println(deck.isEmpty());
 

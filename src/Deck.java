@@ -24,7 +24,23 @@ public class Deck {
 
         this.size = cards.size();
         System.out.println(this.size);
+
+        shuffle();
         // shuffle the deck (ACTIVITY 4)
+    }
+
+    public void shuffle()
+    {
+        for (int k = this.cards.size()-1; k > 0; k--)
+        {
+            int r;
+            r = (int)(Math.random() * (k + 1));
+            Card temp = this.cards.get(k);
+            this.cards.set(k, this.cards.get(r));
+            this.cards.set(r, temp);
+        }
+
+        this.size = cards.size();
     }
 
     public boolean isEmpty()
